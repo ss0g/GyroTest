@@ -6,6 +6,7 @@ import com.revrobotics.SparkMaxPIDController;
 import com.revrobotics.CANSparkMax.ControlType;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -70,8 +71,6 @@ public class GyroTestSubsystem extends SubsystemBase {
 
     @Override
     public void periodic() {
-        // mMotorPIDController.setReference(calculateTargetVelocity(), ControlType.kVelocity);
-        // mMotorPIDController.setReference(2 * Math.PI, ControlType.kVelocity);
-        mMotor.set(0.01);
+        SmartDashboard.putNumber("target velocity", calculateTargetVelocity());
     }
 }
